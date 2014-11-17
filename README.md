@@ -25,6 +25,31 @@ mvn clean install
 * [m2e-code-quality](http://m2e-code-quality.github.io/m2e-code-quality/) plugin for eclipse
   * [marketplace link](http://marketplace.eclipse.org/node/581104#.VGoVd_lHp8E)
 
+### maven plugins
+```
+<plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>findbugs-maven-plugin</artifactId>
+	<version>3.0.0</version>
+</plugin>
+```
+
+```
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-checkstyle-plugin</artifactId>
+	<version>2.13</version>
+</plugin>
+```
+
+```
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-pmd-plugin</artifactId>
+	<version>3.2</version>
+</plugin>
+```
+
 ## usage
 
 * import project `project-parent` and `qa-project` into eclipse using m2eclipse
