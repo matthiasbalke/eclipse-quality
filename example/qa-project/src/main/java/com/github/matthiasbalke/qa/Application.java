@@ -1,4 +1,4 @@
-package org.github.matthiasbalke.qa;
+package com.github.matthiasbalke.qa;
 
 public class Application
 {
