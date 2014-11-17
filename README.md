@@ -15,7 +15,7 @@ mvn clean install
 
 ### m2e-code-quality
 
-* Install [m2e-code-quality](http://m2e-code-quality.github.io/m2e-code-quality/) plugin for eclipse
+* Install [m2e-code-quality](http://m2e-code-quality.github.io/m2e-code-quality/) plugin for eclipse from [Eclipse Marketplace](http://marketplace.eclipse.org/node/581104#.VGoOB_lHp8E)
 
 ## usage
 
