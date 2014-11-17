@@ -13,9 +13,17 @@ cd ..\qa-config
 mvn clean install
 ```
 
-### m2e-code-quality
+### eclipse plugins
 
-* Install [m2e-code-quality](http://m2e-code-quality.github.io/m2e-code-quality/) plugin for eclipse from [Eclipse Marketplace](http://marketplace.eclipse.org/node/581104#.VGoOB_lHp8E)
+* [FindBugs Feature](http://findbugs.sourceforge.net/manual/eclipse.html) (v. 3.0.0.20140706-2cfb468, id: edu.umd.cs.findbugs.plugin.eclipse.feature.group)
+  * [update site](http://findbugs.cs.umd.edu/eclipse/)
+* [Eclipse Checkstyle Plugin](http://eclipse-cs.sourceforge.net/) (v. 5.9.0.201410282234, id: net.sf.eclipsecs.feature.group)
+  * [marketplace link](http://marketplace.eclipse.org/content/checkstyle-plug#.VGoVlflHp8E)
+* [PMD Plug-in]() (v. 4.0.5.v20141105-1906, id: net.sourceforge.pmd.eclipse.feature.group)
+  * [marketplace link](http://marketplace.eclipse.org/content/pmd-eclipse#.VGoVqvlHp8E)
+  * [update site](http://sourceforge.net/projects/pmd/files/pmd-eclipse/update-site/)
+* [m2e-code-quality](http://m2e-code-quality.github.io/m2e-code-quality/) plugin for eclipse
+  * [marketplace link](http://marketplace.eclipse.org/node/581104#.VGoVd_lHp8E)
 
 ## usage
 
