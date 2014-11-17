@@ -16,5 +16,5 @@ rmdir /S /Q example\qa-project\.settings
 
 rmdir /S /Q qa-config\.settings
 
-
+cd example
 mvn clean eclipse:clean
