@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.github.matthiasbalke</groupId>
+		<artifactId>company-parent</artifactId>
+		<version>0.2.0-SNAPSHOT</version>
+		<relativePath />
+	</parent>
+
+	<groupId>org.github.matthiasbalke.qa</groupId>
+	<artifactId>qa-parent</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>qa-project</module>
+	</modules>
+
+	<properties>
+	</properties>
+
+	<build>
+		<!-- include quality profile configuration -->
+		<extensions>
+			<extension>
+				<groupId>org.github.matthiasbalke.qa</groupId>
+				<artifactId>qa-config</artifactId>
+				<version>0.1.0-SNAPSHOT</version>
+			</extension>
+		</extensions>
+
+		<!-- configure quality checking -->
+		<plugins>
+			<!-- Checkstyle -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>checkstyle</id>
+						<phase>test</phase>
+
+						<inherited>true</inherited>
+
+						<goals>
+							<goal>checkstyle</goal>
+						</goals>
+
+						<configuration>
+							<configLocation>matthiasbalke/checkstyle.xml</configLocation>
+							<outputFile>${project.build.directory}/checkstyle-result-main.xml</outputFile>
+							<includeResources>false</includeResources>
+							<includeTestResources>false</includeTestResources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Findbugs -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>findbugs</id>
+						<phase>test</phase>
+
+						<inherited>true</inherited>
+
+						<goals>
+							<goal>findbugs</goal>
+						</goals>
+
+						<configuration>
+							<findbugsXmlOutput>true</findbugsXmlOutput>
+							<includeFilterFile>matthiasbalke/findbugs.xml</includeFilterFile>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
+
+			<!-- PMD -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<configuration>
+					<rulesets>
+						<ruleset>matthiasbalke/pmd.xml</ruleset>
+					</rulesets>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>pmd-cpd</id>
+						<phase>test</phase>
+
+						<inherited>true</inherited>
+
+						<goals>
+							<goal>cpd</goal>
+						</goals>
+
+						<configuration>
+							<minimumTokens>50</minimumTokens>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>pmd-check</id>
+						<phase>test</phase>
+
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
